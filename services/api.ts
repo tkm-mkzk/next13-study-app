@@ -1,3 +1,4 @@
+import { Article } from '@/types/article'
 import { HotelSearchResult } from '@/types/hotel.d'
 
 export const getHotels = async (query: string): Promise<HotelSearchResult> => {
@@ -18,4 +19,18 @@ export const getHotels = async (query: string): Promise<HotelSearchResult> => {
     console.error(error)
     throw error
   }
+}
+
+export const getArticles = async () => {
+  const res = await fetch('http://localhost:3000/api/articles', {
+    cache: 'no-store',
+  })
+
+  // エラーハンドリングを行うことが推奨されている
+  if (!res.ok) {
+    throw new Error('Failed to fetch articles')
+  }
+
+  const data = await res.json()
+  return data.articles as Article[]
 }
