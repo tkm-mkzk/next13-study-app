@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Page = () => {
   return (
     <div className="flex flex-col items-center">
-      <Link href="/" className="underline">
+      <Link href="/" className="underline" prefetch={false}>
         Home
       </Link>
       <h1 className="text-2xl">About</h1>
