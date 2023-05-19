@@ -1,12 +1,12 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
-    <div>
-      <h1>新着記事</h1>
-      <ul>
-        <li>記事1</li>
-        <li>記事2</li>
-        <li>記事3</li>
-      </ul>
+    <div className="m-4">
+      <Link href="/about" className="underline">
+        About
+      </Link>
+      <h1 className="text-2xl">Home</h1>
     </div>
   )
 }
