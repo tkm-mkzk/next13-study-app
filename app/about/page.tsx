@@ -3,8 +3,8 @@ import Link from 'next/link'
 const Page = () => {
   return (
     <div className="flex flex-col items-center">
-      <Link href="/" className="underline" prefetch={false}>
-        Home
+      <Link href="/users" className="underline" prefetch={false}>
+        User
       </Link>
       <h1 className="text-2xl">About</h1>
     </div>
