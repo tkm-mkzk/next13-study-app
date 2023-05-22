@@ -2,6 +2,7 @@ import './globals.scss'
 import { Inter } from 'next/font/google'
 import { Header } from './Header'
 import { Footer } from './Footer'
+import { CounterProvider } from '@/context/CounterProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,23 +12,13 @@ export const metadata = {
   themeColor: '#ffffff',
 }
 
-export default function RootLayout({
-  children,
-  team,
-  analytics,
-}: {
-  children: React.ReactNode
-  team: React.ReactNode
-  analytics: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <head />
       <body className={inter.className}>
         <Header />
-        <div>{children}</div>
-        <div>{team}</div>
-        <div>{analytics}</div>
+        <CounterProvider>{children}</CounterProvider>
         <Footer />
       </body>
     </html>
